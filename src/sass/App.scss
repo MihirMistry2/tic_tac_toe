@@ -1,0 +1,58 @@
+// background: #A1EEBD; for selected player bg
+.main-wrapper {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    .title-wrapper {
+        height: 80px;
+        display: flex;
+        flex-wrap: wrap;
+        align-content: center;
+        > h1 {
+            color: #9399a2;
+            text-transform: uppercase;
+        }
+    }
+    .game-container {
+        .play-again-wrapper {
+            margin: 16px 0px;
+            .play-again-btn {
+                border: 1px solid #dde0e4;
+                border-radius: 5px;
+                height: 36px;
+                width: 152px;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                cursor: pointer;
+                transition: 0.2s;
+                .play-again-title {
+                    color: #dde0e4;
+                    font-size: 18px;
+                    margin-right: 12px;
+                    font-weight: 600;
+                    text-transform: capitalize;
+                }
+                .play-again-icon {
+                    background-image: url(../assets/icons/play-light.svg);
+                    background-repeat: no-repeat;
+                    width: 16px;
+                    height: 16px;
+                }
+                &:hover {
+                    background-color: #dde0e4;
+                    .play-again-title {
+                        color: #0b131e;
+                    }
+                    .play-again-icon {
+                        background-image: url(../assets/icons/play-dark.svg);
+                    }
+                }
+            }
+        }
+    }
+}
