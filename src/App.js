@@ -9,6 +9,30 @@ const App = () => {
     const [items, setItems] = useState(Array(9).fill(''));
     /** @type {[turn: string, setTurn: Function]} */
     const [turn, setTurn] = useState('x');
+    const checkWinner = () => {
+        let winner = false;
+        const winningCombos = [
+            [0, 1, 2], [0, 3, 6],
+            [0, 4, 8], [1, 4, 7],
+            [3, 4, 5], [2, 5, 8],
+            [2, 4, 6], [6, 7, 8],
+        ];
+        const currentPlayerTurnCombos = items.reduce(
+            (previousValue, currentValue, currentIndex, array) =>
+                previousValue.concat(currentValue === turn ? currentIndex : []),
+            []
+        );
+        for (let combos of winningCombos) {
+            if (combos.every((num) => currentPlayerTurnCombos.includes(num))) {
+                winner = true;
+            }
+        }
+        if (winner) {
+            alert('Winner = ', turn);
+        } else if (items.indexOf('') === -1) {
+            alert('Its Draw');
+        }
+    };
 
     return (
         <div className="main-wrapper">
@@ -17,7 +41,7 @@ const App = () => {
             </div>
             <div className="game-container">
                 <PlayAgain setItems={setItems} setTurn={setTurn} />
-                <Square items={items} setItems={setItems} turn={turn} setTurn={setTurn} />
+                <Square items={items} setItems={setItems} turn={turn} setTurn={setTurn} checkWinner={checkWinner} />
                 <Turn turn={turn} />
             </div>
         </div>

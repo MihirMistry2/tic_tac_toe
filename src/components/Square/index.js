@@ -8,9 +8,10 @@ import OIcon from '../../assets/icons/o.svg';
  * @param {Function} setItems Set items 'x' or 'o' state.
  * @param {string} turn Player's turn state.
  * @param {Function} setTurn Set Player's turn state.
+ * @param {Function} checkWinner Check winner.
  * @returns {React.ReactElement} React element that renders a search input with a button.
  */
-const Square = ({ items, setItems, turn, setTurn }) => {
+const Square = ({ items, setItems, turn, setTurn, checkWinner }) => {
     const parentVariant = {
         initial: { opacity: 0 },
         animate: {
@@ -34,6 +35,7 @@ const Square = ({ items, setItems, turn, setTurn }) => {
             const index = Number($target.id);
             items[index] = turn;
             setItems([...items]);
+            checkWinner();
             setTurn((prev) => (prev === 'x' ? 'o' : 'x'));
         } catch (error) {
             alert(`Error: ${error.message}`);
