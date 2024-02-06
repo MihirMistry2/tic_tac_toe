@@ -16,7 +16,7 @@ const App = () => {
                 <h1>tic tac toe</h1>
             </div>
             <div className="game-container">
-                <PlayAgain setItems={setItems} />
+                <PlayAgain setItems={setItems} setTurn={setTurn} />
                 <Square items={items} setItems={setItems} turn={turn} setTurn={setTurn} />
                 <Turn turn={turn} />
             </div>
