@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import PlayAgain from './components/PlayAgain';
 import Square from './components/Square';
+import Turn from './components/Turn';
 import './sass/App.scss';
 
 const App = () => {
@@ -16,7 +17,8 @@ const App = () => {
             </div>
             <div className="game-container">
                 <PlayAgain setItems={setItems} />
-                <Square items={items} setItems={setItems} turn={turn} setTurn={setTurn}/>
+                <Square items={items} setItems={setItems} turn={turn} setTurn={setTurn} />
+                <Turn turn={turn} />
             </div>
         </div>
     );
