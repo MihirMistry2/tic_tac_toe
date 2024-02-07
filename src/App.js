@@ -11,8 +11,8 @@ const App = () => {
     const [items, setItems] = useState(Array(9).fill(''));
     /** @type {[turn: string, setTurn: Function]} */
     const [turn, setTurn] = useState('x');
-    /** @type {[openModal: boolean, setOpenModal: Function]} */
-    const [openModal, setOpenModal] = useState(false);
+    /** @type {[modalOpen: boolean, setModalOpen: Function]} */
+    const [modalOpen, setModalOpen] = useState(false);
     const checkWinner = () => {
         let winner = false;
         const winningCombos = [
@@ -28,7 +28,7 @@ const App = () => {
             if (combos.every((num) => currentPlayerTurnCombos.includes(num))) winner = true;
         }
         if (winner || items.indexOf('') === -1) {
-            setOpenModal(true);
+            setModalOpen(true);
         }
     };
 
@@ -38,12 +38,12 @@ const App = () => {
                 <h1>tic tac toe</h1>
             </div>
             <div className="game-container">
-                <PlayAgain setItems={setItems} setTurn={setTurn} />
+                <PlayAgain setItems={setItems} setTurn={setTurn} setModalOpen={setModalOpen} />
                 <Square items={items} setItems={setItems} turn={turn} setTurn={setTurn} checkWinner={checkWinner} />
                 <Turn turn={turn} />
             </div>
             <AnimatePresence initial={false} mode="wait" onExitComplete={() => null}>
-                {openModal && <Modal setItems={setItems} setTurn={setTurn}></Modal>}
+                {modalOpen && <Modal setItems={setItems} setTurn={setTurn} setModalOpen={setModalOpen} />}
             </AnimatePresence>
         </div>
     );

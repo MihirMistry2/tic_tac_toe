@@ -4,13 +4,14 @@ import { motion } from 'framer-motion';
  * @typedef {Object} Props
  * @property {Function} setItems Set items 'x' or 'o' state.
  * @property {Function} setTurn Set Player's turn state.
+ * @property {Function} setModalOpen Set modal open state.
  */
 /**
  * This component renders the 'Play Again' button, on click game restart.
  * @param {Props} props 
  * @returns {React.ReactElement} React element that renders a search input with a button.
  */
-const PlayAgain = ({ setItems, setTurn }) => {
+const PlayAgain = ({ setItems, setTurn, setModalOpen }) => {
     /**
      * On click restart game state.
      * @param {Event} e
@@ -18,6 +19,7 @@ const PlayAgain = ({ setItems, setTurn }) => {
     const onButtonClick = (e) => {
         setItems(Array(9).fill(''));
         setTurn('x');
+        setModalOpen(false);
     };
 
     return (
