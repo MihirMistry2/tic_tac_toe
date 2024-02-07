@@ -100,7 +100,68 @@
         display: flex;
         flex-direction: column;
         align-items: center;
+        justify-content: space-around;
         background: #202b3b;
+        h1.title {
+            margin: 0;
+            color: #dde0e4;
+            text-transform: capitalize;
+            line-height: 0.9;
+        }
+        .icon-container {
+            border: 2px solid #dde0e4;
+            border-radius: 12px;
+            overflow: hidden;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            &.winner {
+                height: 74px;
+                width: 74px;
+                flex-wrap: wrap;
+                .icon-winner {
+                    &.x {
+                        background-image: url(../assets/icons/x.svg);
+                        background-repeat: no-repeat;
+                        height: 60px;
+                        width: 60px;
+                        transform: scale(1.2);
+                    }
+                    &.o {
+                        background-image: url(../assets/icons/o.svg);
+                        background-repeat: no-repeat;
+                        height: 60px;
+                        width: 60px;
+                        ransform: scale(0.9);
+                    }
+                }
+            }
+            &.no-winner {
+                height: 74px;
+                width: 160px;
+                gap: 24px;
+                .icon-x {
+                    background-image: url(http://localhost:3000/static/media/x.5b4d05a….svg);
+                    background-repeat: no-repeat;
+                    height: 60px;
+                    width: 60px;
+                    transform: scale(1.2);
+                }
+                .icon-o {
+                    background-image: url(http://localhost:3000/static/media/o.2e86160….svg);
+                    background-repeat: no-repeat;
+                    height: 60px;
+                    width: 60px;
+                    transform: scale(0.9);
+                }
+            }
+        }
+        .btn-wrapper {
+            .play-again-wrapper {
+                margin: 0;
+                margin-bottom: 14px;
+            }
+        }
     }
     .modal,
     .game-container {

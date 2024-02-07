@@ -13,6 +13,7 @@ const App = () => {
     const [turn, setTurn] = useState('x');
     /** @type {[modalOpen: boolean, setModalOpen: Function]} */
     const [modalOpen, setModalOpen] = useState(false);
+    const [winner, setWinner] = useState('');
     const checkWinner = () => {
         let winner = false;
         const winningCombos = [
@@ -27,7 +28,11 @@ const App = () => {
         for (let combos of winningCombos) {
             if (combos.every((num) => currentPlayerTurnCombos.includes(num))) winner = true;
         }
-        if (winner || items.indexOf('') === -1) {
+        if (winner) {
+            setWinner(turn);
+            setModalOpen(true);
+        } else if (items.indexOf('') === -1) {
+            setWinner('no');
             setModalOpen(true);
         }
     };
@@ -43,7 +48,7 @@ const App = () => {
                 <Turn turn={turn} />
             </div>
             <AnimatePresence initial={false} mode="wait" onExitComplete={() => null}>
-                {modalOpen && <Modal setItems={setItems} setTurn={setTurn} setModalOpen={setModalOpen} />}
+                {modalOpen && <Modal winner={winner} setItems={setItems} setTurn={setTurn} setModalOpen={setModalOpen} />}
             </AnimatePresence>
         </div>
     );
