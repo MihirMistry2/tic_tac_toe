@@ -1,8 +1,12 @@
 import { motion } from 'framer-motion';
 
 /**
+ * @typedef {Object} Props
+ * @property {React.ReactDOM} children Children DOM
+ */
+/**
  * Backdrop filter for applying graphical effects to the area behind a children's element.
- * @param {React.ReactDOM} children children DOM
+ * @param {Props} props
  * @returns {React.ReactElement} React element that renders a search input with a button.
  */
 const BackdropFilter = ({ children }) => {

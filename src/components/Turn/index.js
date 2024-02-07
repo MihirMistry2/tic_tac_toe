@@ -1,5 +1,14 @@
 import { motion } from 'framer-motion';
 
+/**
+ * @typedef {Object} Props
+ * @property {string} turn Player's turn state.
+ */
+/**
+ * Display current player's turn state.
+ * @param {Props} props 
+ * @returns 
+ */
 const Turn = ({ turn }) => {
     return (
         <motion.div className="players-turn-container" initial={{ opacity: 0, scale: 0 }} animate={{ opacity: 1, scale: 1, transition: { delay: 2 } }}>

@@ -1,9 +1,13 @@
 import { motion } from 'framer-motion';
 
 /**
+ * @typedef {Object} Props
+ * @property {Function} setItems Set items 'x' or 'o' state.
+ * @property {Function} setTurn Set Player's turn state.
+ */
+/**
  * This component renders the 'Play Again' button, on click game restart.
- * @param {Function} setItems Set items 'x' or 'o' state.
- * @param {Function} setTurn Set Player's turn state.
+ * @param {Props} props 
  * @returns {React.ReactElement} React element that renders a search input with a button.
  */
 const PlayAgain = ({ setItems, setTurn }) => {

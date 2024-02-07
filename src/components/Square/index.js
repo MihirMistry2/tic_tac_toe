@@ -3,12 +3,16 @@ import XIcon from '../../assets/icons/x.svg';
 import OIcon from '../../assets/icons/o.svg';
 
 /**
+ * @typedef {Object} Props
+ * @property {string[]} items Player's selected values.
+ * @property {Function} setItems Set items 'x' or 'o' state.
+ * @property {string} turn Player's turn state.
+ * @property {Function} setTurn Set Player's turn state.
+ * @property {Function} checkWinner Check winner.
+ */
+/**
  * This component creates a grid container that is used for rendering 'x' or 'o'.
- * @param {string[]} items Player's selected values.
- * @param {Function} setItems Set items 'x' or 'o' state.
- * @param {string} turn Player's turn state.
- * @param {Function} setTurn Set Player's turn state.
- * @param {Function} checkWinner Check winner.
+ * @param {Props} props 
  * @returns {React.ReactElement} React element that renders a search input with a button.
  */
 const Square = ({ items, setItems, turn, setTurn, checkWinner }) => {
