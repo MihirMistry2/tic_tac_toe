@@ -12,7 +12,7 @@ import OIcon from '../../assets/icons/o.svg';
  */
 /**
  * This component creates a grid container that is used for rendering 'x' or 'o'.
- * @param {Props} props 
+ * @param {Props} props
  * @returns {React.ReactElement} React element that renders a search input with a button.
  */
 const Square = ({ items, setItems, turn, setTurn, checkWinner }) => {
@@ -37,10 +37,12 @@ const Square = ({ items, setItems, turn, setTurn, checkWinner }) => {
         try {
             const $target = e.currentTarget;
             const index = Number($target.id);
-            items[index] = turn;
-            setItems([...items]);
-            checkWinner();
-            setTurn((prev) => (prev === 'x' ? 'o' : 'x'));
+            if (items[index] === '') {
+                items[index] = turn;
+                setItems([...items]);
+                checkWinner();
+                setTurn((prev) => (prev === 'x' ? 'o' : 'x'));
+            }
         } catch (error) {
             alert(`Error: ${error.message}`);
         }
@@ -50,8 +52,8 @@ const Square = ({ items, setItems, turn, setTurn, checkWinner }) => {
         <motion.div className="grid-container" initial="initial" animate="animate" variants={parentVariant}>
             {items.map((item, i) => (
                 <motion.div key={i} id={i} className="grid-item" variants={childrenVariant} onClick={onItemClick}>
-                    {item === 'x' ? <motion.img initial={{ scale: 0 }} animate={{ scale: 1 }} src={XIcon} alt="x" width="80px" height="80px"/> : null}
-                    {item === 'o' ? <motion.img initial={{ scale: 0 }} animate={{ scale: 1 }} src={OIcon} alt="o" width="60px" height="60px"/> : null}
+                    {item === 'x' ? <motion.img initial={{ scale: 0 }} animate={{ scale: 1 }} src={XIcon} alt="x" width="80px" height="80px" /> : null}
+                    {item === 'o' ? <motion.img initial={{ scale: 0 }} animate={{ scale: 1 }} src={OIcon} alt="o" width="60px" height="60px" /> : null}
                 </motion.div>
             ))}
         </motion.div>
