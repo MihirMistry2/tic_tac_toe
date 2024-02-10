@@ -6,6 +6,7 @@
 
 A simple Tic-Tac-Toe game using **ReactJS**.
 <br>
+<br>
 
 ## ⚡ Install
 
@@ -35,5 +36,12 @@ npm start
 -   `Framer Motion`
 
 <br>
+
+## 🔗 Demo
+
+-   [Click Here](https://mihirmistry2.github.io/tic_tac_toe/) to see and play by yourself a demo of the game.
+
 <br>
+<br>
+
 Thank You 🙂
