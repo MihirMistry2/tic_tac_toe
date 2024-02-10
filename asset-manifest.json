@@ -1,0 +1,21 @@
+{
+  "files": {
+    "main.css": "/github.io/tic_tac_toe/static/css/main.16b8eb52.css",
+    "main.js": "/github.io/tic_tac_toe/static/js/main.6b8f82da.js",
+    "static/media/play-dark.svg": "/github.io/tic_tac_toe/static/media/play-dark.2041201fa29eb317695d.svg",
+    "static/media/play-light.svg": "/github.io/tic_tac_toe/static/media/play-light.ae5f819af43e38e8090c.svg",
+    "index.html": "/github.io/tic_tac_toe/index.html",
+    "static/media/x-dark.svg": "/github.io/tic_tac_toe/static/media/x-dark.b41fc242c6253ac4d068.svg",
+    "static/media/x-light.svg": "/github.io/tic_tac_toe/static/media/x-light.7d31c7d774451b9bff94.svg",
+    "static/media/x.svg": "/github.io/tic_tac_toe/static/media/x.5b4d05abb4205fd21ef0f3ecba3b2304.svg",
+    "static/media/o-dark.svg": "/github.io/tic_tac_toe/static/media/o-dark.6aaf59cfe1d917906db7.svg",
+    "static/media/o-light.svg": "/github.io/tic_tac_toe/static/media/o-light.addd8f92bc00c8e3da6e.svg",
+    "static/media/o.svg": "/github.io/tic_tac_toe/static/media/o.2e86160e98295718adc808b9875360c4.svg",
+    "main.16b8eb52.css.map": "/github.io/tic_tac_toe/static/css/main.16b8eb52.css.map",
+    "main.6b8f82da.js.map": "/github.io/tic_tac_toe/static/js/main.6b8f82da.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.16b8eb52.css",
+    "static/js/main.6b8f82da.js"
+  ]
+}
