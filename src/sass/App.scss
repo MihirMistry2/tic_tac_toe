@@ -1,3 +1,20 @@
+.github-wrapper {
+    width: calc(100% - 16px);
+    display: flex;
+    justify-content: flex-end;
+    flex-wrap: wrap;
+    align-content: center;
+    padding: 8px;
+    .icon-wrapper {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background-color: #35455e;
+        padding: 8px;
+        border-radius: 50%;
+        cursor: pointer;
+    }
+}
 .main-wrapper {
     margin: 0;
     padding: 0;
@@ -141,14 +158,14 @@
                 width: 160px;
                 gap: 24px;
                 .icon-x {
-                    background-image: url(http://localhost:3000/static/media/x.5b4d05a….svg);
+                    background-image: url(../assets/icons/x.svg);
                     background-repeat: no-repeat;
                     height: 60px;
                     width: 60px;
                     transform: scale(1.2);
                 }
                 .icon-o {
-                    background-image: url(http://localhost:3000/static/media/o.2e86160….svg);
+                    background-image: url(../assets/icons/o.svg);
                     background-repeat: no-repeat;
                     height: 60px;
                     width: 60px;

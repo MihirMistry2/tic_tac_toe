@@ -5,6 +5,7 @@ import Square from './components/Square';
 import Turn from './components/Turn';
 import Modal from './components/Modal';
 import './sass/App.scss';
+import GitHub from './components/GitHub';
 
 const App = () => {
     /** @type {[items: string[], setItems: Function]}  */
@@ -38,19 +39,22 @@ const App = () => {
     };
 
     return (
-        <div className="main-wrapper">
-            <div className="title-wrapper">
-                <h1>tic tac toe</h1>
+        <>
+            <GitHub />
+            <div className="main-wrapper">
+                <div className="title-wrapper">
+                    <h1>tic tac toe</h1>
+                </div>
+                <div className="game-container">
+                    <PlayAgain setItems={setItems} setTurn={setTurn} setModalOpen={setModalOpen} />
+                    <Square items={items} setItems={setItems} turn={turn} setTurn={setTurn} checkWinner={checkWinner} />
+                    <Turn turn={turn} />
+                </div>
+                <AnimatePresence initial={false} mode="wait" onExitComplete={() => null}>
+                    {modalOpen && <Modal winner={winner} setItems={setItems} setTurn={setTurn} setModalOpen={setModalOpen} />}
+                </AnimatePresence>
             </div>
-            <div className="game-container">
-                <PlayAgain setItems={setItems} setTurn={setTurn} setModalOpen={setModalOpen} />
-                <Square items={items} setItems={setItems} turn={turn} setTurn={setTurn} checkWinner={checkWinner} />
-                <Turn turn={turn} />
-            </div>
-            <AnimatePresence initial={false} mode="wait" onExitComplete={() => null}>
-                {modalOpen && <Modal winner={winner} setItems={setItems} setTurn={setTurn} setModalOpen={setModalOpen} />}
-            </AnimatePresence>
-        </div>
+        </>
     );
 };
 export default App;
